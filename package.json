@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "vite dev",
     "build": "vite build && tsc --noEmit",
-    "start": "node .output/server/index.mjs"
+    "start": "node .output/server/index.mjs",
+    "deploy": "pnpm run build && wrangler deploy",
+    "cf-typegen": "wrangler types --env-interface Env"
   },
   "dependencies": {
     "@tanstack/react-router": "^1.128.0",
@@ -15,6 +17,7 @@
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^2.6.0",
+    "wrangler": "^4.25.0",
     "zod": "^3.24.2"
   },
   "devDependencies": {
